@@ -1,10 +1,30 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "raul@gmail.com",
+      "password": "$2a$10$8sOO3q32Sl3BdphxisShFeN4fjQpiDbRu0R5xifCUZGUiab4VzYAO",
+      "firstname": "teste",
+      "age": 23,
+      "id": 1
+    },
+    {
+      "email": "teste@teste.com",
+      "password": "$2a$10$/.HHq88nYmLRXeHJl7TKvOUO4GMCiIho59E0OQzia3pDO.sai9iwO",
+      "firstname": "aaaaa",
+      "age": 12,
+      "id": 2
+    }
+  ],
   "books": [
     {
       "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
       "author": "Robert C. Martin",
       "id": 1
+    },
+    {
+      "title": "testeee",
+      "author": "aaaaa",
+      "id": 2
     }
   ]
 }
