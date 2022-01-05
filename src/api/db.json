@@ -13,6 +13,13 @@
       "firstname": "aaaaa",
       "age": 12,
       "id": 2
+    },
+    {
+      "email": "aaaaaaaa@aaaa.com",
+      "password": "$2a$10$7kpUIc1gxI8m2OWdbaOpxu8MybASYNRTCIjxX7CZz4aAune0qbJqK",
+      "firstname": "Raul",
+      "age": 18,
+      "id": 3
     }
   ],
   "books": [
