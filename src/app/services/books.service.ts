@@ -22,24 +22,31 @@ export class BooksService {
     ) { }
 
   getAllBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${this.baseUrl}/books`, {
-      headers: new HttpHeaders({Authorization: `Bearer ${this.auth.getAccessToken()}`})
-    });
+    const headers = this.getAuthorizationHeader()
+    return this.http.get<Book[]>(`${this.baseUrl}/books`, { headers } );
   }
 
   getBookById(bookId: number): Observable<Book> {
-    return this.http.get<Book>(`${this.baseUrl}/books/${bookId}`);
+    const headers = this.getAuthorizationHeader()
+    return this.http.get<Book>(`${this.baseUrl}/books/${bookId}`, { headers });
   }
 
   createBook(book: Omit<Book, 'id'>): Observable<Book> {
-    return this.http.post<Book>(`${this.baseUrl}/books`, book);
+    const headers = this.getAuthorizationHeader()
+    return this.http.post<Book>(`${this.baseUrl}/books`, book, { headers });
   }
 
   updateBook(book: Book): Observable<Book> {
-    return this.http.put<Book>(`${this.baseUrl}/books/${book.id}`, book);
+    const headers = this.getAuthorizationHeader()
+    return this.http.put<Book>(`${this.baseUrl}/books/${book.id}`, book, { headers });
   }
 
   deleteBookById(bookId: number): Observable<Book> {
-    return this.http.delete<Book>(`${this.baseUrl}/books/${bookId}`);
+    const headers = this.getAuthorizationHeader()
+    return this.http.delete<Book>(`${this.baseUrl}/books/${bookId}`, { headers });
+  }
+
+  private getAuthorizationHeader(): HttpHeaders {
+    return new HttpHeaders({Authorization: `Bearer ${this.auth.getAccessToken()}`})
   }
 }
